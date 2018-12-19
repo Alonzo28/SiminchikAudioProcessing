@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*- 
+
 import os
 import os.path as path
+
 
 def get_name_with_ext_file(file):
 	return os.path.basename(file)
@@ -13,7 +15,7 @@ def get_path(file):
 
 def create_audio_folder(path,name):
 	if os.path.isdir(path+name) == False:
-		os.system("mkdir "+path+name)
+		os.mkdir(path+name)
 	return path+name+"/"
 
 def delete_files(files):
@@ -22,4 +24,5 @@ def delete_files(files):
 
 def delete_file(file):
 	os.remove(file)
+
 

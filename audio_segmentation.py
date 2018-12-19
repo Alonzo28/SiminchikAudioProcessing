@@ -1,7 +1,12 @@
-from pydub import AudioSegment
-from pydub.utils import make_chunks
+# -*- coding: utf-8 -*- 
+
 import os
 import utils
+from pydub import AudioSegment
+from pydub.utils import make_chunks
+
+# Parameters
+# ==========
 
 region = "puno"
 institution = "ondaazul"
@@ -9,11 +14,13 @@ year = "2017"
 month = "Ago"
 day = "22"
 
+
+# Write name of file
 def rename_audio(path,num_audio,lenght):
 	chunk_name = region+"_"+institution+"_"+year+month+day+"A_"+str(num_audio)+"-"+str(lenght)
 	return chunk_name
 
-
+# Split audio file 
 def split_audio_without_time(audio_file):
 	path = utils.get_path(audio_file)
 	segment_audio = AudioSegment.from_file(audio_file,"wav") 
